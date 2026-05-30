@@ -1,16 +1,19 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+  "experimentalServices": {
+    "frontend": {
+      "root": "frontend",
+      "routePrefix": "/",
+      "framework": "vite",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist"
+    },
+    "backend": {
+      "root": "backend",
+      "routePrefix": "_/backend",
+      "framework": "fastapi",
+      "buildCommand": "pip install -r requirements.txt",
+      "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT"
     }
-  ],
-  "routes": [
-    {
-      "src": "^/(.*)$",
-      "dest": "frontend/dist/index.html"
-    }
-  ]
+  }
 }
