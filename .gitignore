@@ -5,6 +5,7 @@ venv/
 __pycache__/
 *.pkl
 *.csv
+*.joblib
 backend/.env
 backend/app.db
 backend/datasets/*

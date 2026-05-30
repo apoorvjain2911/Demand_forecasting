@@ -93,6 +93,19 @@ npm run build
 
 4. `frontend/vercel.json` ensures SPA route refreshes work correctly.
 
+## Architecture Diagram
+
+The system architecture is a simple two-tier web application with a data-processing backend and a single-page frontend. Use the diagram below when planning deployments.
+
+```mermaid
+flowchart LR
+	A[User Browser] -->|Upload CSV / View Dashboard| B(Vercel Frontend)
+	B -->|API requests (VITE_API_URL)| C[Render Backend (FastAPI)]
+	C --> D[(Postgres / SQLite)]
+	C --> E[(Model artefact - joblib/pkl)]
+	C --> F[Storage for uploaded CSVs]
+```
+
 ## Screenshots
 
 Add screenshots here after deployment for the executive dashboard, charts, and forecast table.
