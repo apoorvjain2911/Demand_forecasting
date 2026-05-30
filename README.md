@@ -74,6 +74,7 @@ npm run dev
 2. Create a new Render Web Service from the repository.
 3. Use `render.yaml` or point the service to `backend/`.
 4. Set `DATABASE_URL` to your PostgreSQL connection string.
+5. Ensure Render uses **Python 3.11** for the service. The project pins `pydantic`/`pydantic-core` which have prebuilt wheels for Python 3.11; newer Python runtimes (3.14+) may require Rust to compile native extensions and can fail during build.
 5. Set `ALLOWED_ORIGINS` to the deployed Vercel frontend URL.
 6. Verify the start command is:
 
