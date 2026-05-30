@@ -94,6 +94,13 @@ npm run build
 
 4. `frontend/vercel.json` ensures SPA route refreshes work correctly.
 
+## Live Demo
+
+- Frontend: https://demand-forecasting-self.vercel.app/
+- Backend health: https://demand-forecasting-x2hr.onrender.com/health
+
+Use the live frontend to upload a CSV and view the dashboard. The frontend is configured to call the Render backend through `VITE_API_URL`.
+
 ## Architecture Diagram
 
 The system architecture is a simple two-tier web application with a data-processing backend and a single-page frontend. Use the diagram below when planning deployments.
