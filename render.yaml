@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: erp-demand-forecast-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: MODEL_PATH
+        value: models/xgboost_model.pkl
+      - key: DATASET_DIR
+        value: datasets
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO

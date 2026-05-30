@@ -1,0 +1,17 @@
+node_modules/
+dist/
+venv/
+.env
+__pycache__/
+*.pkl
+*.csv
+backend/.env
+backend/app.db
+backend/datasets/*
+!backend/datasets/.gitkeep
+backend/models/*
+!backend/models/.gitkeep
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+*.log
