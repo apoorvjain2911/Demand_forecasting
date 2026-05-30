@@ -1,13 +1,14 @@
 services:
   - type: web
     name: erp-demand-forecast-api
-    env: python
+    runtime: python
     rootDir: backend
-    # Use Python 3.11 on Render to ensure prebuilt wheels for pydantic-core are available.
-    pythonVersion: 3.11
-    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
+    healthCheckPath: /health
+    buildCommand: python -m pip install --upgrade pip setuptools wheel && python -m pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.13
       - key: DATABASE_URL
         sync: false
       - key: MODEL_PATH
