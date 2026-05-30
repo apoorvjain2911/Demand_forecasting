@@ -10,7 +10,14 @@ from sqlalchemy.orm import Session
 from api.forecast import router as forecast_router
 from api.train import router as train_router
 from api.upload import router as upload_router
-from core.config import APP_NAME, APP_VERSION, CORS_ORIGINS, LOG_LEVEL, ensure_runtime_directories
+from core.config import (
+    APP_NAME,
+    APP_VERSION,
+    CORS_ALLOW_CREDENTIALS,
+    CORS_ORIGINS,
+    LOG_LEVEL,
+    ensure_runtime_directories,
+)
 from database.db import Base, engine, get_db
 from database.models import Dataset, Forecast
 
@@ -28,7 +35,7 @@ app = FastAPI(title=APP_NAME, version=APP_VERSION)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
-    allow_credentials=True,
+    allow_credentials=CORS_ALLOW_CREDENTIALS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
