@@ -1,28 +1,105 @@
 # ERP Demand Forecasting & Inventory Intelligence
 
-Production-ready ERP demand forecasting platform with a FastAPI backend and a React + Vite dashboard for upload-driven analysis.
+Production-ready AI-powered ERP Demand Forecasting and Inventory Intelligence platform that transforms historical sales data into demand forecasts, inventory recommendations, executive KPIs, and business insights through a single-upload workflow.
 
 ## Project Overview
 
-The workflow is single-step and business-friendly:
+This project provides a business-friendly ERP analytics experience where users can upload historical sales data and instantly receive forecasting and inventory intelligence.
 
-1. Upload a historical sales CSV.
-2. The backend validates the file, preprocesses the data, trains the model, and generates demand plus inventory intelligence.
-3. The frontend renders KPIs, charts, recommendations, confidence levels, and business insights automatically.
+### Workflow
+
+1. Upload a historical sales CSV file.
+2. The backend validates and preprocesses the data.
+3. An XGBoost forecasting model is trained automatically.
+4. Demand forecasts are generated.
+5. Inventory intelligence and business recommendations are calculated.
+6. The dashboard displays KPIs, charts, forecasts, alerts, and insights.
+
+No separate training or forecasting steps are required from the user.
+
+---
 
 ## Features
 
-- Demand Forecasting
-- Inventory Intelligence
-- Business Insights
-- Executive Dashboard
+### Demand Forecasting
+- Automated demand prediction
+- Product-level forecasts
+- Growth trend analysis
+- Forecast confidence indicators
+
+### Inventory Intelligence
+- Low stock alerts
+- Overstock detection
+- Reorder recommendations
+- Inventory health scoring
+
+### Executive Dashboard
+- Executive summary KPIs
+- Interactive charts
+- Forecast tables
+- Business performance insights
+
+### Business Insights
+- Natural-language recommendations
+- Product growth opportunities
+- Demand trend identification
+- Category performance analysis
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- Tailwind CSS
+- Axios
+- Recharts
+
+### Backend
+- FastAPI
+- Pandas
+- NumPy
+- Scikit-Learn
+- XGBoost
+- SQLAlchemy
+- Pydantic
+
+### Database
+- SQLite (default)
+- PostgreSQL (production-ready)
+
+### Deployment
+- Vercel (Frontend)
+- Render (Backend)
+
+---
 
 ## Repository Structure
 
-- `backend/` FastAPI app, model training, analytics, database, and deployment config
-- `frontend/` React dashboard, Vite build, Tailwind UI, and Vercel config
-- `render.yaml` Render deployment manifest for the API
-- `frontend/vercel.json` SPA routing for Vercel
+```text
+Demand_forecasting/
+│
+├── backend/
+│   ├── api/
+│   ├── core/
+│   ├── database/
+│   ├── services/
+│   ├── models/
+│   ├── datasets/
+│   ├── main.py
+│   ├── requirements.txt
+│   └── render.yaml
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── vercel.json
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+```
 
 ## Local Setup
 
@@ -75,7 +152,7 @@ npm run dev
 3. Use `render.yaml` or point the service to `backend/`.
 4. Set `DATABASE_URL` to your PostgreSQL connection string.
 5. Ensure Render uses **Python 3.11** for the service. The project pins `pydantic`/`pydantic-core` which have prebuilt wheels for Python 3.11; newer Python runtimes (3.14+) may require Rust to compile native extensions and can fail during build.
-5. Set `ALLOWED_ORIGINS` to the deployed Vercel frontend URL.
+6. Set `ALLOWED_ORIGINS` to the deployed Vercel frontend URL.
 6. Verify the start command is:
 
 ```bash
