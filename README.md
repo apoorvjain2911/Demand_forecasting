@@ -178,18 +178,7 @@ npm run build
 
 Use the live frontend to upload a CSV and view the dashboard. The frontend is configured to call the Render backend through `VITE_API_URL`.
 
-## Architecture Diagram
 
-The system architecture is a simple two-tier web application with a data-processing backend and a single-page frontend. Use the diagram below when planning deployments.
-
-```mermaid
-flowchart LR
-	A[User Browser] -->|Upload CSV / View Dashboard| B(Vercel Frontend)
-	B -->|API requests (VITE_API_URL)| C[Render Backend (FastAPI)]
-	C --> D[(Postgres / SQLite)]
-	C --> E[(Model artefact - joblib/pkl)]
-	C --> F[Storage for uploaded CSVs]
-```
 
 ## Screenshots
 
