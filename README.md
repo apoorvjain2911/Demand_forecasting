@@ -4,7 +4,7 @@ Production-ready AI-powered ERP Demand Forecasting and Inventory Intelligence pl
 
 ## Project Overview
 
-This project provides a business-friendly ERP analytics experience where users can upload historical sales data and instantly receive forecasting and inventory intelligence.
+This project provides a business-friendly ERP analytics experience where users can upload historical sales data and instantly receive forecasting and inventory intelligence
 
 ### Workflow
 
