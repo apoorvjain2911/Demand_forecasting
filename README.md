@@ -1,6 +1,6 @@
 # ERP Demand Forecasting & Inventory Intelligence
 
-Production-ready AI-powered ERP Demand Forecasting and Inventory Intelligence platform that transforms historical sales data into demand forecasts, inventory recommendations, executive KPIs, and business insights through a single-upload workflow...
+Production-ready AI-powered ERP Demand Forecasting and Inventory Intelligence platform that transforms historical sales data into demand forecasts, inventory recommendations, executive KPIs, and business insights through a single-upload workflow.
 
 ## Project Overview
 
